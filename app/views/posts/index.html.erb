@@ -7,6 +7,7 @@
   <p><%= post.description %></p>
   <p><%= post.user.name %></p>
   <p><%= post.comments.count %> Comments</p>
+  <p><%= post.get_likes.size %> Likes</p>
 <% end %>
 <%= link_to "Create a post", new_post_path %>
 </div>

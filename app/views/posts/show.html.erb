@@ -6,6 +6,11 @@
       <p><%= @post.description %></p>
       <%= cl_image_tag @post.photo, height: 300, width: 400, crop: :fill %>
       <p><%= @post.user.name %></p>
+      <p><%= @post.get_upvotes.size %> Likes</p>
+      <p><%= @post.get_downvotes.size %> Dislikes</p>
+      <%= link_to "like", like_post_path(@post), method: :get %>
+      <%= link_to "dislike", dislike_post_path(@post), method: :get %>
+
 
       <h2><%= pluralize(@post.comments.count, "Comment") %></h2>
       <% @comments.each do |comment| %>
