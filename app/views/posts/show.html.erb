@@ -13,10 +13,14 @@
 
 
       <h2><%= pluralize(@post.comments.count, "Comment") %></h2>
+      <ul class="list">
       <% @comments.each do |comment| %>
-        <%= comment.user.name %>
-        <%= comment.content %>
+        <li class= "list-item">
+          <%= comment.user.name %>
+          <%= comment.content %>
+        </li>
       <% end %>
+      </ul>
       <%= render '/comments/form' %>
 
       <%= link_to 'Edit', edit_post_path(@post) %>
