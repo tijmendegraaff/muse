@@ -2,8 +2,11 @@
 <div class="row">
 <% @posts.each do |post| %>
   <h1><%= link_to post.title, post_path(post) %></h1>
+  <%= cl_image_tag post.photo, height: 300, width: 400, crop: :fill %>
   <p><%= post.link %></p>
   <p><%= post.description %></p>
+  <p><%= post.user.name %></p>
+  <p><%= post.comments.count %> Comments</p>
 <% end %>
 <%= link_to "Create a post", new_post_path %>
 </div>
